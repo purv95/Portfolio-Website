@@ -1,0 +1,56 @@
+  /*The gallery container. - Fills the browser window. - Renders its contents in 3D.*/
+  #gallery {
+      position: absolute;
+      width: 100%;
+      height: 75%;
+      -webkit-perspective: 600px;
+      margin: 0 auto;
+  }
+
+  /*
+  Images within the gallery.
+   - Add a reflection below the image.
+   - Fade the reflection out gradually towards the bottom.
+   - Make the image resize with its containing div.
+   - Hide the image initially.
+*/
+  #gallery img {
+      -webkit-box-reflect:
+          below 0 -webkit-gradient(linear,
+              left top,
+              left bottom,
+              color-stop(0, rgba(255, 255, 255, 0)),
+              color-stop(.5, rgba(255, 255, 255, .3)),
+              color-stop(1, rgba(255, 255, 255, .3)));
+      max-width: 160px;
+      max-height: 160px;
+      display: none;
+      backface-visibility: hidden;
+  }
+
+  #gallery div {
+      position: absolute;
+      padding-bottom: 400px;
+      bottom: -150px;
+  }
+
+  /*
+  The current slide caption.
+   - Position it below the slide.
+*/
+  #caption {
+      position: absolute;
+      z-index: 2;
+      bottom: 200px;
+      width: 100%;
+      color: black;
+      text-align: center;
+      font-family: 'Caveat';
+      font-size: 25px;
+  }
+
+  .container {
+      position: absolute;
+      bottom: 100px;
+      align-content: center;
+  }
